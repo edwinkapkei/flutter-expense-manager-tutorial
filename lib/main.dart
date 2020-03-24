@@ -1,5 +1,7 @@
 import 'package:expensemanager/models/transaction.dart';
+import 'package:expensemanager/widgets/new_transaction.dart';
 import 'package:expensemanager/widgets/transaction-list.dart';
+import 'package:expensemanager/widgets/user_transactions.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -16,11 +18,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-//  String titleInput;
-//  String amountInput;
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,40 +36,7 @@ class MyHomePage extends StatelessWidget {
                   elevation: 1,
                 ),
               ),
-              SizedBox(
-                height: 5,
-              ),
-              Card(
-                elevation: 1,
-                child: Container(
-                  padding: EdgeInsets.all(10.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      TextField(
-                        decoration: InputDecoration(labelText: "Title"),
-                        controller: titleController,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(labelText: "Amount"),
-                        controller: amountController,
-                      ),
-                      FlatButton(
-                        child: Text('Add Transaction'),
-                        textColor: Colors.deepOrange,
-                        onPressed: () {
-                          print(titleController.text);
-                          print(amountController.text);
-                        },
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              TransactionList()
+              UserTransactions()
             ],
           ),
         ),

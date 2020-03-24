@@ -2,25 +2,15 @@ import 'package:expensemanager/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TransactionList extends StatefulWidget {
-  @override
-  _TransactionListState createState() => _TransactionListState();
-}
+class TransactionList extends StatelessWidget {
+  final List<Transaction> transactions;
 
-class _TransactionListState extends State<TransactionList> {
-  final List<Transaction> transactions = [
-    Transaction(
-        id: 't1', title: 'New Plates', amount: 70.99, date: DateTime.now()),
-    Transaction(
-        id: 't2',
-        title: 'Cushion Replacements',
-        amount: 11.99,
-        date: DateTime.now())
-  ];
+  TransactionList(this.transactions);
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: transactions.map((tx) {
+    return Column(
+        children: transactions.map((tx) {
       return Card(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
