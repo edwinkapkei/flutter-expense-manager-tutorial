@@ -39,7 +39,7 @@ class _UserTransactionsState extends State<UserTransactions> {
         SizedBox(
           height: 5,
         ),
-        NewTransaction(),
+        NewTransaction(_addNewTransaction),
         SizedBox(
           height: 5,
         ),
