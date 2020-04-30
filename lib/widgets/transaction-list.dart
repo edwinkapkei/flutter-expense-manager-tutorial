@@ -23,7 +23,7 @@ class TransactionList extends StatelessWidget {
                       border: Border.all(color: Colors.deepOrange, width: 2)),
                   padding: EdgeInsets.all(10.0),
                   child: Text(
-                    "Ksh ${transactions[index].amount}",
+                    "Ksh ${transactions[index].amount.toStringAsFixed(2)}",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
