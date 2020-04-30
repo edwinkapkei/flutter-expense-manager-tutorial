@@ -20,14 +20,15 @@ class TransactionList extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.deepOrange, width: 2)),
+                      border: Border.all(
+                          color: Theme.of(context).primaryColor, width: 2)),
                   padding: EdgeInsets.all(10.0),
                   child: Text(
                     "Ksh ${transactions[index].amount.toStringAsFixed(2)}",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        color: Colors.deepOrange),
+                        color: Theme.of(context).primaryColor),
                   ),
                 ),
                 Column(
@@ -35,10 +36,7 @@ class TransactionList extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       transactions[index].title,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.title,
                     ),
                     Text(DateFormat.yMMMMd().format(transactions[index].date),
                         style: TextStyle(
