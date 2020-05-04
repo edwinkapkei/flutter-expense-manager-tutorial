@@ -40,6 +40,7 @@ class _NewTransactionState extends State<NewTransaction> {
             TextField(
               decoration: InputDecoration(labelText: "Title"),
               controller: titleController,
+              textCapitalization: TextCapitalization.sentences,
               onSubmitted: (_) => submitTransaction(),
             ),
             TextField(
