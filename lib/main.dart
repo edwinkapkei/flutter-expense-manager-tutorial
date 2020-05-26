@@ -101,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     final transactionListWidget = Container(
         height: (mediaQuery.size.height -
-            appBar.preferredSize.height -
-            mediaQuery.padding.top) *
+                appBar.preferredSize.height -
+                mediaQuery.padding.top) *
             0.7,
         child: TransactionList(_transactions, _deleteTransaction));
     return Scaffold(
@@ -128,19 +128,19 @@ class _MyHomePageState extends State<MyHomePage> {
             if (!_isLandscape)
               Container(
                   height: (mediaQuery.size.height -
-                      appBar.preferredSize.height -
-                      mediaQuery.padding.top) *
+                          appBar.preferredSize.height -
+                          mediaQuery.padding.top) *
                       0.3,
                   child: Chart(_recentTransactions)),
             if (!_isLandscape) transactionListWidget,
             if (_isLandscape)
               _showChart
                   ? Container(
-                  height: (mediaQuery.size.height -
-                      appBar.preferredSize.height -
-                      mediaQuery.padding.top) *
-                      0.7,
-                  child: Chart(_recentTransactions))
+                      height: (mediaQuery.size.height -
+                              appBar.preferredSize.height -
+                              mediaQuery.padding.top) *
+                          0.7,
+                      child: Chart(_recentTransactions))
                   : transactionListWidget,
           ],
         ),
